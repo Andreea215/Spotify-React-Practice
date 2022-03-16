@@ -1,0 +1,54 @@
+.confirmation-overlay {
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.confirmation-overlay div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #e9e9e9;
+  color: #191414;
+  width: 300px;
+  padding: 40px 24px 24px 24px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.confirmation-overlay .big-p {
+  margin: 24px 0;
+}
+
+.confirmation-message {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .confirmation-overlay div {
+    width: 400px;
+  }
+}

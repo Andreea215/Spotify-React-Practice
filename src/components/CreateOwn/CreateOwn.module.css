@@ -1,0 +1,139 @@
+.create-own-form-inner {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 40px;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.input {
+  height: 2rem;
+  border-radius: 8px;
+  border-color: #eaeaea;
+  border-style: solid;
+  padding: 14px;
+}
+
+.input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.input::placeholder {
+  color: lightgray;
+}
+
+.input.small-input {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  max-width: 300px;
+  display: block;
+}
+
+.default-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.default-checkbox:checked ~ .custom-checkbox::after {
+  background-image: url("../../../public/images/checkbox-checked.png");
+}
+
+.checkbox-label {
+  display: block;
+  position: relative;
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 200px;
+  height: 200px;
+}
+
+.custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.custom-checkbox::after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 26px;
+  height: 26px;
+  background-image: url("../../../public/images/checkbox-unchecked.png");
+}
+
+.checkbox-artist-name {
+  position: absolute;
+  bottom: 0;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: brightness(0.5);
+          backdrop-filter: brightness(0.5);
+}
+
+.checkbox-label:hover .custom-checkbox img {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+@media only screen and (min-width: 500px) {
+  .create-own-form-inner {
+    -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .create-own-form-inner {
+    margin-top: 40px;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .create-own-form-inner {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .input.small-input {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    max-width: 300px;
+    display: block;
+    min-width: 100%;
+  }
+}
+

@@ -1,0 +1,34 @@
+.home {
+  background-image: url("../../../public/images/home-mobile-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #191414;
+  margin: 0;
+  padding-bottom: 80px;
+  padding-top: 100px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.menu-wrapper {
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 16px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .home {
+    background-image: url("../../../public/images/home-bg.jpg");
+  }
+  .menu-wrapper {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+    margin-top: 88px;
+    grid-gap: 40px;
+  }
+}

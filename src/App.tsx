@@ -1,25 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
+import Footer from './components/Layout/Footer/Footer';
+import Home from './components/Home/Home';
+import Auth from './components/Auth/Auth';
+import CreateOwn from './components/CreateOwn/CreateOwn';
+import MusicFestival from './components/MusicFestival/MusicFestival';
+import AroundTheWorld from './components/AroundTheWorld/AroundTheWorld';
+import History from './components/History/History';
+
+import { AppWrapper } from './context/AppProvider';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <>
+        <ScrollToTop />
+        <Switch>
+          <Route path='/' exact>
+            <Redirect to='/home' />
+          </Route>
+          <Route path='/home'>
+            <Home />
+          </Route>
+          <Route path='/auth'>
+            <Auth />
+          </Route>
+          <Route path='/create-own'>
+            <CreateOwn />
+          </Route>
+          <Route path='/music-festival'>
+            <MusicFestival />
+          </Route>
+          <Route path='/around-world'>
+            <AroundTheWorld />
+          </Route>
+          <Route path='/history'>
+            <History />
+          </Route>
+        </Switch>
+        <Footer />
+      </>
+    </AppWrapper>
   );
 }
 

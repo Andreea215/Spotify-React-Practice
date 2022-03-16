@@ -1,13 +1,328 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  min-height: 100vh;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+body {
+  color: #ffffff;
+  font-family: sans-serif;
+  background-color: #191414;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+body:not(.home, .auth-bg) {
+  color: #ffffff;
+  font-family: sans-serif;
+  background: radial-gradient(99.13% 183.21% at 99.13% 0%, #0c4d23 0%, #191414 54.74%);
+  background-repeat: no-repeat;
+  background-color: #191414;
+}
+
+.green_text {
+  color: #1db954;
+}
+
+ul,
+ol {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-title {
+  margin: 32px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 140px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60vh;
+}
+
+.big-p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.medium-p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.main-button {
+  display: block;
+  padding: 16px 24px;
+  margin: 24px 0px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1db954;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-button:disabled, .main-button:disabled:hover, .main-button:disabled:active {
+  background-color: #adadad;
+  color: #191414;
+  cursor: default;
+}
+
+.main-button:hover {
+  padding: 16px 24px;
+  margin: 24px 0px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #4fb874;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-button:active {
+  padding: 16px 24px;
+  margin: 24px 0px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1aa149;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.artist-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 280px;
+  height: 240px;
+  background-color: #191414;
+  border-radius: 8px;
+  color: white;
+  margin: 48px auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  white-space: nowrap;
+  -webkit-box-shadow: inset 0 0 0 2000px #1914143b;
+          box-shadow: inset 0 0 0 2000px #1914143b;
+}
+
+.artist-card.open-playlist {
+  width: 280px;
+  height: 280px;
+}
+
+.artist-card p {
+  font-size: 24px;
+  text-align: center;
+  margin: 18px 4px;
+  -webkit-filter: drop-shadow(0px 0px 4px black);
+          filter: drop-shadow(0px 0px 4px black);
+}
+
+.artist-card.open-playlist:hover {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+  cursor: pointer;
+}
+
+.form {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form > * {
+  width: 100%;
+}
+
+#create-own-form-button {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 20px auto;
+}
+
+.form.form-desktop {
+  width: 280px;
+  margin-top: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  margin: 40px 0 16px 0;
+  display: inline-block;
+}
+
+.input {
+  height: 2rem;
+  border-radius: 8px;
+  border-color: #eaeaea;
+  border-style: solid;
+  padding: 14px;
+}
+
+.invalid .input {
+  background-color: rgb(245, 151, 140);
+}
+
+.invalid .label {
+  color: rgb(247, 77, 58);
+}
+
+.invalid p {
+  font-size: 0.75rem;
+  color: rgb(247, 77, 58);
+  margin: 0;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.input::placeholder {
+  color: lightgray;
+}
+
+.input.small-input {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  max-width: 300px;
+  display: block;
+}
+
+.required::after {
+  content: "*";
+  color: red;
+}
+
+.message {
+  text-align: center;
+  margin: 32px;
+}
+
+.inline-link {
+  color: #1db954;
+  text-decoration: underline;
+}
+
+.happy-bird {
+  margin: 24px 0;
+}
+
+a .medium-p:hover {
+  color: #1db954;
+}
+
+@media only screen and (max-width: 768px) {
+  .medium-p {
+    font-size: 1.4rem;
+  }
+  .big-p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .big-p {
+    font-size: 1.5rem;
+  }
+  .medium-p {
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+  .form.form-desktop {
+    width: 640px;
+    margin: 24px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .line-up-wrapper,
+  .playlist-list-wrapper {
+    display: -ms-grid;
+    display: grid;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -webkit-column-gap: 40px;
+            column-gap: 40px;
+    margin: 0 auto;
+  }
+  .artist-card {
+    width: 480px;
+    height: 400px;
+    margin: 48px 0;
+  }
+  .artist-card.open-playlist {
+    width: 480px;
+    height: 480px;
+  }
+  .form.form-desktop {
+    width: 800px;
+    margin: 40px;
+  }
 }
